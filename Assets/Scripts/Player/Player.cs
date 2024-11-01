@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     
         if (animator == null)
         {
-            Debug.LogError("Animator is null! Make sure the 'EngineEffects' GameObject exists and has an Animator component.");
+            Debug.LogError("Animator is null! Make sure the 'EngineEffect' GameObject exists and has an Animator component.");
         }
     }
     void FixedUpdate()

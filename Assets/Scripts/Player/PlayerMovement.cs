@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
             Mathf.Clamp(rb.velocity.x, -maxSpeed.x, maxSpeed.x),
             Mathf.Clamp(rb.velocity.y, -maxSpeed.y, maxSpeed.y)
         );
+
+        MoveBound();
     }
 
 
@@ -68,13 +70,24 @@ public class PlayerMovement : MonoBehaviour
 
 
     void MoveBound()
-    {
+    {   
+    // Dapatkan ukuran batas layar dari kamera
+    Vector3 screenBottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+    Vector3 screenTopRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
 
+    // Ambil posisi pesawat saat ini
+    Vector3 currentPosition = rb.position;
+
+    // Clamp posisi pesawat agar tetap dalam batasan x dari -8.5 ke 8.5 dan y maksimum 4.5
+    currentPosition.x = Mathf.Clamp(currentPosition.x, -8.65f, 8.65f);
+    currentPosition.y = Mathf.Clamp(currentPosition.y, -5f, 4.5f);
+
+    // Set posisi pesawat yang telah di-clamp
+    rb.position = currentPosition;
     }
-    
+
     public bool IsMoving()
     {
-        Debug.Log($"Current Velocity: {rb.velocity}"); // Log untuk memeriksa kecepatan
         return rb.velocity.magnitude > 0.01f;
     }
 }

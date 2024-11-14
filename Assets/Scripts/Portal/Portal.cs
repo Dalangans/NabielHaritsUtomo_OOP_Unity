@@ -21,7 +21,8 @@ public class Portal : MonoBehaviour
     {
         WeaponPickup weaponPickup = Player.Instance.GetComponentInChildren<WeaponPickup>();
 
-        if (GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Weapon>() != null)        {
+        if (GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Weapon>() != null)        
+        {
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<Collider2D>().enabled = true;
         }

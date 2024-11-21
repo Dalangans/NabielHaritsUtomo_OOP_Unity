@@ -12,14 +12,14 @@ GameObject:
   - component: {fileID: 8468440855792799747}
   - component: {fileID: 7171316752925571870}
   - component: {fileID: 3972432152750446673}
-  - component: {fileID: 1474341028628562319}
   - component: {fileID: 8202974447056300778}
   - component: {fileID: -43344273924515264}
   - component: {fileID: -4792410216530870852}
   - component: {fileID: 2183543323497031954}
+  - component: {fileID: 2025749612293151028}
   m_Layer: 0
   m_Name: EnemyHorizontal
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,19 +163,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.3}
   m_EdgeRadius: 0
---- !u!114 &1474341028628562319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6078106118467402165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f15a4848181f2847b309d7a655d650d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
 --- !u!114 &8202974447056300778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5533e878752e0ed408f7c54138b365bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
-  speed: 2
+  Level: 3
+  enemySpawner: {fileID: 0}
+  combatManager: {fileID: 0}
+  speed: 4
 --- !u!114 &-43344273924515264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c1d18b7492f1f41ab54f8ecce5a380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  damage: 0
+  bullet: {fileID: 0}
+  damage: 10
 --- !u!114 &-4792410216530870852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990392a21b8d94444a9ba695775a83f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthComponent: {fileID: 0}
 --- !u!114 &2183543323497031954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,4 +218,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2123585897da2c748a623b79fdbfa4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 15
+  health: 0
+--- !u!114 &2025749612293151028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078106118467402165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e27284585aea274da8cd26bea3cc386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkingCount: 7
+  blinkInterval: 0.1
+  blinkMaterial: {fileID: 2100000, guid: efdaa5d439c327c41b9100355dc08926, type: 2}
+  isInvincible: 0

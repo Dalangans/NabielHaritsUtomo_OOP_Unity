@@ -2,10 +2,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int level = 1; // Set default level for enemy
+    public int Level;
 
-    public void SetLevel(int newLevel)
+
+    public EnemySpawner enemySpawner;
+
+    public CombatManager combatManager;
+
+
+
+    private void OnDestroy()
     {
-        level = newLevel;
+
+        if (enemySpawner != null && combatManager != null)
+        {
+            enemySpawner.onDeath();
+            combatManager.onDeath();
+
+        }
+
     }
+
 }

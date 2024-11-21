@@ -24,11 +24,22 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (true)
+    // Check if the collided object has a different tag
+        if (collision.gameObject.tag != gameObject.tag)
         {
-            objectPool.Release(this);
+            HitboxComponent hitbox = collision.GetComponent<HitboxComponent>();
+            if (hitbox != null)
+            {
+                hitbox.Damage(damage);
+                objectPool.Release(this); // Return the bullet to the pool after causing damage
+            }
+        }
+        else
+        {
+            objectPool.Release(this); // Optionally return to pool if no relevant collision
         }
     }
+
 
     private void OnBecameInvisible()
     {

@@ -26,11 +26,6 @@ public class Player : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         animator = GameObject.Find("EngineEffect").GetComponent<Animator>();
-    
-        if (animator == null)
-        {
-            Debug.LogError("Animator is null! Make sure the 'EngineEffect' GameObject exists and has an Animator component.");
-        }
     }
     void FixedUpdate()
     {

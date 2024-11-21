@@ -16,7 +16,7 @@ public class EnemyForward : Enemy
         transform.Translate(Vector2.down * speed * Time.deltaTime);
 
         // Jika musuh keluar dari layar di bagian bawah, respawn di bagian atas layar
-        if (transform.position.y < -Screen.height / 80f)
+        if (transform.position.y < -Screen.height / 175f)
         {
             RespawnAtTop();
         }
@@ -25,8 +25,8 @@ public class EnemyForward : Enemy
     // Method untuk memposisikan musuh secara acak di bagian atas layar
     private void RespawnAtTop()
     {
-        float randomX = Random.Range(-Screen.width / 100f, Screen.width / 100f);
-        transform.position = new Vector2(randomX, Screen.height / 80f);
+        float randomX = Random.Range(-Screen.width / 200f, Screen.width / 200f);
+        transform.position = new Vector2(randomX, Screen.height / 175f);
 
         // Pastikan rotasi tetap pada keadaan awal (menghadap ke bawah secara natural)
         transform.rotation = Quaternion.identity;

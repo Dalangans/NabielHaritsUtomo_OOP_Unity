@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 525160345607329505}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002, y: 0.434, z: 0}
+  m_LocalPosition: {x: 0, y: 0.508, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5888ee20a0c1154cb8d63124b1a5e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
+  bulletSpeed: 5
   damage: 10
 --- !u!1 &5763968852425303007
 GameObject:
@@ -228,13 +228,14 @@ GameObject:
   - component: {fileID: 6823138116022278714}
   - component: {fileID: 4253026049359426784}
   - component: {fileID: -1132693661131807368}
+  - component: {fileID: 5641211365177219802}
   - component: {fileID: 6294261626741840642}
   - component: {fileID: 5608079652686291474}
   - component: {fileID: 8774988097437900850}
   - component: {fileID: -4022381953179658181}
   m_Layer: 0
   m_Name: EnemyBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,7 +249,7 @@ Transform:
   m_GameObject: {fileID: 5763968852425303007}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.46, y: 1.5299987, z: 0}
+  m_LocalPosition: {x: -0.558, y: 2.322, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -377,8 +378,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.54166675}
+  m_Size: {x: 0.55, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &5641211365177219802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763968852425303007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e27284585aea274da8cd26bea3cc386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkingCount: 7
+  blinkInterval: 0.1
+  blinkMaterial: {fileID: 2100000, guid: efdaa5d439c327c41b9100355dc08926, type: 2}
+  isInvincible: 0
 --- !u!114 &6294261626741840642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,7 +408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d82de852e855c499f1730263e1d77f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  Level: 4
+  enemySpawner: {fileID: 0}
+  combatManager: {fileID: 0}
   speed: 2
 --- !u!114 &5608079652686291474
 MonoBehaviour:
@@ -405,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c1d18b7492f1f41ab54f8ecce5a380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bullet: {fileID: 0}
   damage: 10
 --- !u!114 &8774988097437900850
 MonoBehaviour:
@@ -420,6 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  health: 0
 --- !u!114 &-4022381953179658181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +481,7 @@ Transform:
   m_GameObject: {fileID: 7413436208501134101}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.24, z: 0.1}
+  m_LocalPosition: {x: 0.002, y: 0.266, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -554,7 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de19755fc6c23334a8a9217027481e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootIntervalInSeconds: 0.1
+  shootIntervalInSeconds: 0.5
   bullet: {fileID: 7236349443750778103}
   bulletSpawnPoint: {fileID: 7293691396812693895}
   parentTransform: {fileID: 0}

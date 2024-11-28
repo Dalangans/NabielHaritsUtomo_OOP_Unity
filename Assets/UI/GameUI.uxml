@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/TitleText.uss?fileID=7433441132597879392&amp;guid=5aa3857d4e3f0a14e88d468c99b7393a&amp;type=3#TitleText" />
+    <ui:VisualElement style="flex-grow: 1; flex-basis: auto;">
+        <ui:Label tabindex="-1" text="Aircraft 2D" parse-escape-sequences="true" display-tooltip-when-elided="true" class="header" style="font-size: 20px; -unity-font-style: bold; color: rgb(255, 255, 255); align-items: center; -unity-text-align: middle-center; height: 97px;" />
+    </ui:VisualElement>
+</ui:UXML>

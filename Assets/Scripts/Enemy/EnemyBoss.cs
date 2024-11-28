@@ -72,7 +72,7 @@ public class EnemyBoss : Enemy
 
     private void Respawn()
     {
-        float yPos = Random.Range(-yMax, yMax);
+        float yPos = Random.Range(0, yMax);
         if (Random.value > 0.5f)
         {
             transform.position = new Vector2(-xMax, yPos);

@@ -1,0 +1,23 @@
+.EnemiesLeft {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
+.Wave {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
+.Health {
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    font-size: 40px;
+}
+
+.Point {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}

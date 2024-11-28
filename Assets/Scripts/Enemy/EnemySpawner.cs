@@ -65,7 +65,6 @@ public class EnemySpawner : MonoBehaviour
             int i = spawnCount;
             while (i > 0)
             {
-
                 Enemy enemy = Instantiate(spawnedEnemy);
                 enemy.GetComponent<Enemy>().enemySpawner = this;
                 enemy.GetComponent<Enemy>().combatManager = combatManager;
